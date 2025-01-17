@@ -46,7 +46,7 @@ module input_to_hidden #(parameter N = 9, parameter H = 5, parameter L = 2)(
     genvar k;
     generate
         for (k=0; k<H; k=k+1) begin
-            assign hidden_neurons[k] = $signed(input_neurons) * $signed(weight_input_hidden[k]) + bias_hidden[k];
+            assign hidden_neurons[k] = $signed(input_neurons) * $signed(weight_input_hidden[k][]) + bias_hidden[k]; //rewrite this 
         end
     endgenerate
     
